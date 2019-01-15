@@ -1,0 +1,166 @@
+<!-- Preloader -->
+<div id="loading">
+    <div id="loading-center">
+        <div id="loading-center-absolute">
+            <div class="object" id="object_one"></div>
+            <div class="object" id="object_two"></div>
+            <div class="object" id="object_three"></div>
+            <div class="object" id="object_four"></div>
+            <div class="object" id="object_five"></div>
+            <div class="object" id="object_six"></div>
+            <div class="object" id="object_seven"></div>
+            <div class="object" id="object_eight"></div>
+            <div class="object" id="object_big"></div>
+        </div>
+    </div>
+</div>
+<!--End Preloader -->
+<!-- Navbar -->
+<nav class="navbar navbar-default bootsnav no-background navbar-fixed black">
+    <div class="container">
+
+        <!-- Start Atribute Navigation -->
+        <div class="attr-nav">
+            <ul>
+                <li class="side-menu"><a href="#"><i class="fa fa-bars"></i></a></li>
+            </ul>
+        </div>
+        <!-- End Atribute Navigation -->
+
+        <!-- Start Header Navigation -->
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#"><img src="assets/img/logo.png" class="logo" alt=""></a>
+        </div>
+        <!-- End Header Navigation -->
+    </div>
+
+    <!-- Start Side Menu -->
+    <div class="side">
+        <a href="#" class="close-side"><i class="fa fa-times"></i></a>
+        <div class="widget">
+            <ul class="link">
+                <li><a href="#">About</a></li>
+                <li><a href="#">Employment</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+    </div>
+    <!-- End Side Menu -->
+</nav>
+
+<!-- Header -->
+<header id="hello">
+    <!-- Container -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8 col-md-offset-2">
+                <div class="banner">
+                    <h3>-introducing-</h3>
+                    <h1>GRANITE STATE BURGER</h1>
+
+                    <div class="inner_banner">
+                        <div class="banner_content">
+                            <p>A double layer of sear-sizzled 100% pure beef mingled with special sauce on a sesame
+                                seed bun and topped with melty American cheese, crisp lettuce, minced onions and tangy
+                                pickles.</p>
+                            <p>*Based on pre-cooked patty weight.</p>
+                        </div>
+                        <div class="stamp">
+                            <img src="/assets/img/stamp.png" alt="" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div><!-- Container end -->
+    <p class="caption">*Limited Time Only</p>
+</header><!-- Header end -->
+
+<!-- Block Content -->
+<section id="block">
+    <div class="container">
+
+        <!-- First section -->
+        <div class="row">
+            <div class="col-sm-6">
+                <h1>Menu</h1>
+                <table style="width:75%">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/menu devour=true}}
+                    {{/unless}}
+                    {{/each}}
+                    <form class="create-form">
+                        <tr>
+                            <td><input type="text" id="ca" name="name"></td>
+                            <td><button class="" type="submit">Add Burger</button></td>
+                        </tr>
+                    </form>
+                </table>
+            </div>
+
+            <div class="col-sm-6">
+                <h1>Shopping Cart</h1>
+                <table style="width:75%">
+                    {{#each burgers}}
+                    {{#if devoured}}
+                    <tr>
+                        <td>{{burger_name}}</td>
+                    </tr>
+                    {{/if}}
+                    {{/each}}
+                </table>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <!-- Container -->
+    <div class="container">
+        <div class="row">
+
+            <div class="col-lg-3 col-sm-4 col-xs-12 col-lg-offset-1 pull-right">
+                <div class="subscribe">
+                    <h4>Subscribe now</h4>
+                    <p>Subscribe to the newsletter and
+                        get some juicy stuff every week.</p>
+
+                    <form role="form">
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="email" class="form-control" id="em" placeholder="Enter your e-mail here">
+                                <span class="input-group-btn">
+                                    <button type="submit" class="btn send_btn">
+                                        <i class="glyphicon glyphicon-send"></i>
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="col-lg-3 col-sm-4 col-xs-12 col-lg-offset-1 pull-right">
+                <div class="contact_us">
+                    <h4>Contact Us</h4>
+                    <a href="">eat-da-burger@burgers.com</a>
+
+                    <address>
+                        100 Main St.<br />
+                        Portsmouth, NH 03801 <br />
+                    </address>
+                </div>
+            </div>
+
+            <div class="col-lg-4 col-sm-4 col-xs-12 pull-right">
+                <div class="basic_info">
+                    <a href=""><img class="footer_logo" src="/assets/img/logo.png" alt="Burger" /></a>
+                </div>
+            </div>
+
+        </div>
+    </div><!-- Container end -->
+</footer><!-- Footer end -->
