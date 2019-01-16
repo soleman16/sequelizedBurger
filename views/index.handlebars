@@ -82,30 +82,40 @@
 
         <!-- First section -->
         <div class="row">
-            <div class="col-sm-6">
-                <h1>Menu</h1>
-                <table style="width:75%">
-                    {{#each burgers}}
-                    {{#unless devoured}}
-                    {{> burgers/menu devour=true}}
-                    {{/unless}}
-                    {{/each}}
+
+            <div class="col-sm-3">
+                <h1 class="" style="padding: 0px 5px 20px 0px">Build a Burger</h1>
+                <table style="width:80%">
                     <form class="create-form">
                         <tr>
-                            <td><input type="text" id="ca" name="name"></td>
+                            <td><input type="text" id="burger-info" placeholder="Type of burger" name="name"></td>
                             <td><button class="" type="submit">Add Burger</button></td>
                         </tr>
                     </form>
                 </table>
             </div>
 
-            <div class="col-sm-6">
-                <h1>Shopping Cart</h1>
-                <table style="width:75%">
+            <div class="col-sm-5">
+                <h1 class="" style="padding: 0px 5px 20px 0px">Menu</h1>
+                <table style="width:100%">
+                    {{#each burgers}}
+                    {{#unless devoured}}
+                    {{> burgers/menu devour=true}}
+                    {{/unless}}
+                    {{/each}}
+                </table>
+            </div>
+
+            <div class="col-sm-4">
+                <h1 style="padding: 0px 5px 20px 5px">Shopping Cart</h1>
+                <table style="width:100%">
                     {{#each burgers}}
                     {{#if devoured}}
                     <tr>
-                        <td>{{burger_name}}</td>
+                        <td>{{burger_name}} (Purchased by: {{'Customer.customer_name'}})</td>
+                    </tr>
+                    <tr class="blank_row">
+                        <td></td>
                     </tr>
                     {{/if}}
                     {{/each}}

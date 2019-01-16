@@ -19,6 +19,15 @@ body {
     margin-top: 50px; 
 }
 
+.container {
+    width: 90%
+}
+
+.blank_row
+{
+    height: 10px !important; /* overwrites any other rules */
+}
+
 .droptarget {
     float: left; 
     width: 100px; 
@@ -267,7 +276,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'Luckiest Guy', cursive;
     margin: 0;
 }
-h1{font-size: 70px;}
+h1{font-size: 40px;}
 h2 {font-size: 36px;letter-spacing:1px;}
 h3 {font-size: 24px;}
 img {width: 100%;}
